@@ -8,14 +8,18 @@
 
 <h1>Books</h1>
 
-<ul>
-    {% for book in books %}
-        <li>
-            <a href="{% url 'books:detail' book.id %}">{{ book.title }}</a>
-        </li>
-        <br>
-    {% endfor %}
-</ul>
+{% if books %}
+    <ul>
+        {% for book in books %}
+            <li>
+                <a href="{% url 'books:detail' book.id %}">{{ book.title }}</a>
+            </li>
+            <br>
+        {% endfor %}
+    </ul>
+{% else %}
+    No books found.
+{% endif %}
 
 </body>
 </html>
