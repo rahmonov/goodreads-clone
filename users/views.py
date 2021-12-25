@@ -3,7 +3,7 @@ from django.contrib.auth.forms import AuthenticationForm
 from django.shortcuts import render, redirect
 from django.views import View
 
-from users.forms import UserCreateForm, UserLoginForm
+from users.forms import UserCreateForm
 
 
 class RegisterView(View):
@@ -29,7 +29,7 @@ class RegisterView(View):
 
 class LoginView(View):
     def get(self, request):
-        login_form = UserLoginForm()
+        login_form = AuthenticationForm()
 
         return render(request, "users/login.html", {"login_form": login_form})
 
