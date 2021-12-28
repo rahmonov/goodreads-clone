@@ -1,31 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Landing Page</title>
-</head>
-<body>
+{% extends "base.html" %}
 
-<h1>Landing Page</h1>
+{% block content %}
+    <h1>Landing Page</h1>
 
-{% if messages %}
-
-    {% for message in messages %}
-        <span class="{{ message.tags }}">{{ message }}</span>
-    {% endfor %}
-
-{% endif %}
-
-<p>
-    <a href="{% url 'books:list' %}">Books</a> /  <a href="{% url 'users:profile' %}">Profile</a>
-    /  <a href="{% url 'users:register' %}">Register</a>
-
-    {% if request.user.is_authenticated %}
-        /  <a href="{% url 'users:logout' %}">Logout</a>
-    {% else %}
-        /  <a href="{% url 'users:login' %}">Login</a>
-    {% endif %}
-</p>
-
-</body>
-</html>
+    <p>
+    Goodreads is an American social cataloging website and a subsidiary of Amazon[1] that allows individuals to search its database of books, annotations, quotes, and reviews. Users can sign up and register books to generate library catalogs and reading lists. They can also create their own groups of book suggestions, surveys, polls, blogs, and discussions. The website's offices are located in San Francisco.[2]
+    Goodreads was founded in December 2006 and launched in January 2007 by Otis Chandler and Elizabeth Khuri Chandler.[3][4][5] In December 2007, the site had 650,000 members[6] and 10,000,000 books had been added.[7] By July 2012, the site reported 10 million members, 20 million monthly visits, and thirty employees.[8] On March 28, 2013, Amazon announced its acquisition of Goodreads,[9] and by July 23, 2013, Goodreads announced their user base had grown to 20 million members.[10]
+    By July 2019, the site had 90 million members.[11]
+    </p>
+{% endblock %}
