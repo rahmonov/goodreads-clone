@@ -9,6 +9,6 @@
         {% csrf_token %}
         {{ login_form.as_p }}
 
-        <button>Log in</button>
+        <button>Log in</button>  <span class="ms-3">No account? Then, <a href="{% url 'users:register' %}">get registered</a></span>
     </form>
 {% endblock %}
