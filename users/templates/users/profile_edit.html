@@ -3,7 +3,7 @@
 {% block content %}
     <h1>Edit Profile Page</h1>
 
-    <form method="post">
+    <form method="post" enctype="multipart/form-data">
         {% csrf_token %}
 
         {{ form.as_p }}
