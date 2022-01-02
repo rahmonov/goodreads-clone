@@ -5,6 +5,8 @@
 {% block content %}
     <h1>Profile Page</h1>
 
+    <a href="{% url 'users:profile-edit' %}">edit profile</a>
+
     <p>Username: {{ user.username }}</p>
     <p>First Name: {{ user.first_name }}</p>
     <p>Last Name: {{ user.last_name }}</p>
