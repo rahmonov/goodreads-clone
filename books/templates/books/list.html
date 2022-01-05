@@ -5,8 +5,8 @@
 {% block content %}
     <h1>Books</h1>
 
-    {% if books %}
-        {% for book in books %}
+    {% if page_obj %}
+        {% for book in page_obj.object_list %}
             <div class="row mb-4">
                 <div class="col-2">
                     <img class="cover-pic" src="{{ book.cover_picture.url }}">
@@ -20,8 +20,26 @@
                     </p>
                 </div>
             </div>
-
         {% endfor %}
+
+        <nav>
+            <ul class="pagination">
+                {% if page_obj.has_previous %}
+                    <li class="page-item"><a class="page-link" href="?page=1">&laquo; first</a></li>
+                    <li class="page-item"><a class="page-link" href="?page={{ page_obj.previous_page_number }}">previous</a></li>
+                {% endif %}
+
+                <li class="page-item active">
+                    <a href="#" class="page-link">{{ page_obj.number }}</a>
+                </li>
+
+                {% if page_obj.has_next %}
+                    <li class="page-item"><a class="page-link" href="?page={{ page_obj.next_page_number }}">next</a></li>
+                    <li class="page-item"><a class="page-link" href="?page={{ page_obj.paginator.num_pages }}">last&raquo;</a></li>
+                {% endif %}
+            </ul>
+        </nav>
+
     {% else %}
         No books found.
     {% endif %}
