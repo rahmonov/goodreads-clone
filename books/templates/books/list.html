@@ -5,6 +5,16 @@
 {% block content %}
     <h1>Books</h1>
 
+    <div class="row mb-3">
+        <div class="col-4">
+            <form class="d-flex" method="get">
+                <input class="form-control me-2" type="text" placeholder="Search" name="q" value="{{ search_query }}">
+
+                <button class="btn btn-success">Search</button>
+            </form>
+        </div>
+    </div>
+
     {% if page_obj %}
         {% for book in page_obj.object_list %}
             <div class="row mb-4">
