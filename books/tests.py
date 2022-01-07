@@ -6,6 +6,9 @@ from users.models import CustomUser
 
 
 class BooksTestCase(TestCase):
+    """
+    Test
+    """
     def test_no_books(self):
         response = self.client.get(reverse("books:list"))
 
