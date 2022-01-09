@@ -12,6 +12,17 @@
         <div class="col-6 ms-3">
             <h3>{{ book.title }}</h3>
 
+            <span class="fst-italic">
+                Authored by
+                {% for book_author in book.bookauthor_set.all %}
+                    {% if forloop.last %}
+                        {{ book_author.author.full_name }}
+                    {% else %}
+                        {{ book_author.author.full_name }},
+                    {% endif %}
+                {% endfor %}
+            </span>
+
             <p>
                 {{ book.description }}
             </p>
