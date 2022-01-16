@@ -2,3 +2,4 @@
 env
 media-files
 .env
+**/__pycache__/
