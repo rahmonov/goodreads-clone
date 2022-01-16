@@ -2,3 +2,9 @@ Django==4.0
 djangorestframework==3.13.1
 celery==5.2.3
 django-environ==0.8.1
+django-crispy-forms==1.13.0
+crispy-bootstrap5==0.6
+Pillow==8.4.0
+psycopg2==2.9.2
+psycopg2-binary==2.9.2
+gunicorn==20.1.0
